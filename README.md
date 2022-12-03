@@ -36,13 +36,13 @@ Encore une chose: savoir que cela ne fera pas de vous un meilleur développeur d
 
 ### Utilisez des noms de variables significatifs et prononçables
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 const yyyymmdstr = moment().format("YYYY/MM/DD");
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 const dateActuelle = moment().format("YYYY/MM/DD");
@@ -52,7 +52,7 @@ const dateActuelle = moment().format("YYYY/MM/DD");
 
 ### Utilisez le même vocabulaire pour le même type de variable
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 obtenirInformationDeUtilisateur();
@@ -60,7 +60,7 @@ obtenirDonéesDuClient();
 obtenirFicheDuClient();
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 obtenirUtiilisateur();
@@ -109,7 +109,7 @@ enregistrerCodePostalVille(
 );
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 const adresse = "One Infinite Loop, Cupertino 95014";
@@ -139,7 +139,7 @@ endroits.forEach(l => {
 });
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 const endroits = ["Austin", "New York", "San Francisco"];
@@ -174,7 +174,7 @@ function peindreLaVoiture(voiture) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 const Voiture = {
@@ -247,7 +247,7 @@ syntaxe de déstructuration. Cela présente quelques avantages:
 3.  Les linters peuvent vous avertir des propriétés inutilisées, ce qui serait impossible
          sans déstructuration.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 function créerUnMenu(titre, corps, boutonTexte, annulable) {
@@ -255,7 +255,7 @@ function créerUnMenu(titre, corps, boutonTexte, annulable) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function créerUnMenu({ titre, corps, boutonTexte, annulable }) {
@@ -280,7 +280,7 @@ Lorsque vous pouvez isoler une fonction à une seule action, elles peuvent être
 facilement et votre code lira beaucoup plus propre. Si vous ne prenez rien d'autre de
 ce guide autre que celui-ci, vous serez en avance sur de nombreux développeurs.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 function emailClients(clients) {
@@ -310,7 +310,7 @@ function estClientActif(client) {
 
 ### Les noms de fonction doivent dire ce qu'ils font
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 function ajouterÀLaDate(date, mois) {
@@ -323,7 +323,7 @@ const date = new Date();
 ajouterÀLaDate(date, 1);
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function ajouterMoisÀDate(mois, date) {
@@ -342,7 +342,7 @@ Lorsque vous avez plus d'un niveau d'abstraction, votre fonction est généralem
 faire trop. La scission des fonctions conduit à la réutilisation et à la facilité
 essai.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 function mieuxAnalyserAlternatifJS(code) {
@@ -369,7 +369,7 @@ function mieuxAnalyserAlternatifJS(code) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function mieuxAnalyserAlternatifJS(code) {
@@ -465,7 +465,7 @@ function afficherLaListeDesGestionnaires(gestionnaires) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function afficherLaListeDesEmployés(employés) {
@@ -562,7 +562,7 @@ function créerUnFichier(nom, temp) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function créerUnFichier(nom) {
@@ -593,7 +593,7 @@ sans aucune structure, en utilisant des types de données mutables qui peuvent �
 et ne pas centraliser où vos effets secondaires se produisent. Si vous pouvez faire cela, vous voudrez
 être plus heureux que la grande majorité des autres programmeurs.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 // Variable globale référencée par la fonction suivante.
@@ -609,7 +609,7 @@ diviséEnPrénomEtNom();
 console.log(nom); // ['Gavish', 'Barosee'];
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function diviséEnPrénomEtNom(nom) {
@@ -660,7 +660,7 @@ Deux mises en garde à mentionner à cette approche:
          ce type d’approche de programmation doit être rapide et ne nécessite pas autant de mémoire que
          ce serait à vous de cloner manuellement des objets et des tableaux.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 const AjouterUnArticleAuPanier = (panier, article) => {
@@ -668,7 +668,7 @@ const AjouterUnArticleAuPanier = (panier, article) => {
 };
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 const AjouterUnArticleAuPanier = (panier, article) => {
@@ -690,7 +690,7 @@ faire la même chose. Et si cette autre bibliothèque utilisait simplement `diff
 la différence entre le premier et le dernier élément d'un tableau? C'est pourquoi ça
 Il serait bien mieux d’utiliser simplement les classes ES2015 / ES6 et d’étendre simplement le `Array` global.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 Array.prototype.diff = function diff(tableauDeComparaison) {
@@ -699,7 +699,7 @@ Array.prototype.diff = function diff(tableauDeComparaison) {
 };
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 class SuperArray extends Array {
@@ -718,7 +718,7 @@ JavaScript n'est pas un langage fonctionnel comme Haskell, mais il a
 une saveur fonctionnelle à elle. Les langages fonctionnels peuvent être plus propres et plus faciles à tester.
 Privilégiez ce style de programmation quand vous le pouvez.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 const sortieDuProgrammeur = [
@@ -747,7 +747,7 @@ for (let i = 0; i < sortieDuProgrammeur.length; i++) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 const sortieDuProgrammeur = [
@@ -779,7 +779,7 @@ const sortieTotale = sortieDuProgrammeur.reduce(
 
 ### Encapsuler des conditions
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 if (fsm.state === "chercher" && estVide(listNode)) {
@@ -787,7 +787,7 @@ if (fsm.state === "chercher" && estVide(listNode)) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function devraitMontrerSpinner(fsm, listNode) {
@@ -803,7 +803,7 @@ if (devraitMontrerSpinner(fsmInstance, listNodeInstance)) {
 
 ### Éviter les conditionnels négatifs
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 function DOMNodeNestPasPrésent(node) {
@@ -815,7 +815,7 @@ if (!DOMNodeNestPasPrésent(node)) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function estDOMNodePresent(node) {
@@ -840,7 +840,7 @@ une chose. Quand vous avez des classes et des fonctions qui ont des instructions
 dites à votre utilisateur que votre fonction fait plus d’une chose. Rappelles toi,
 faites juste une chose.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 class Avion {
@@ -896,7 +896,7 @@ Parfois, vous êtes mordu par cette liberté et cela devient tentant de le faire
 vérification de type dans vos fonctions. Il y a plusieurs façons d'éviter d'avoir à le faire.
 La première chose à considérer est des API cohérentes.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 function voyagerAuTexas(véhicule) {
@@ -908,7 +908,7 @@ function voyagerAuTexas(véhicule) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function voyagerAuTexas(véhicule) {
@@ -930,7 +930,7 @@ ne compense pas la lisibilité perdue. Gardez votre JavaScript propre, écrivez
 de bons tests et de bonnes critiques de code. Sinon, faites tout cela mais avec
 TypeScript (qui, comme je l'ai dit, est une excellente alternative!).
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 function combiner(val1, val2) {
@@ -945,7 +945,7 @@ function combiner(val1, val2) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function combiner(val1, val2) {
@@ -963,7 +963,7 @@ Ressources](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
 pour voir où l'optimisation fait défaut. Ciblez-les entre-temps, jusqu'à ce que
 ils sont fixes s'ils peuvent l'être.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 // Sur les anciens navigateurs, chaque itération avec `list.length` non mis en cache serait coûteuse
@@ -973,7 +973,7 @@ for (let i = 0, len = list.length; i < len; i++) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 for (let i = 0; i < list.length; i++) {
@@ -989,7 +989,7 @@ Le code mort est aussi grave qu'un code en double. Il n'y a aucune raison de le 
 votre base de code. Si ce n'est pas appelé, éliminez-le! Il sera toujours en sécurité
 dans votre historique de version si vous en avez toujours besoin.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 function ancienModuleDeDemande(url) {
@@ -1004,7 +1004,7 @@ const req = nouveauModuleDeDemande;
 traqueurInventaire("pommes", req, "www.inventory-awesome.io");
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function nouveauModuleDeDemande(url) {
@@ -1033,7 +1033,7 @@ liste non organisée des raisons pour lesquelles:
 - Vous pouvez charger paresseux les propriétés de votre objet, disons l'obtenir d'un
      serveur.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 function faireUnCompteBancaire() {
@@ -1049,7 +1049,7 @@ const compte = faireUnCompteBancaire();
 compte.bilan = 100;
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function faireUnCompteBancaire() {
@@ -1084,7 +1084,7 @@ compte.fixerLeBilan(100);
 
 Ceci peut être accompli par des fermetures (pour ES5 et moins).
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 const Employé = function(nom) {
@@ -1101,7 +1101,7 @@ delete employé.nom;
 console.log(`Nom de l'employé: ${employé.obtenirNom()}`); // Nom de l'employé: undefined
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function faireEmployé(nom) {
@@ -1129,7 +1129,7 @@ définitions pour les classes ES5 classiques. Si vous avez besoin d'héritage (e
 que vous ne pourriez pas), alors préférez les classes ES2015 / ES6. Cependant, préférez les petites fonctions aux
 cours jusqu’à ce que vous ayez besoin d’objets plus grands et plus complexes.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 const Animale = function(âge) {
@@ -1169,7 +1169,7 @@ Humain.prototype.constructor = Humain;
 Humain.prototype.parler = function parler() {};
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 class Animale {
@@ -1215,7 +1215,7 @@ Pour cette raison, dis-je, utilisez la méthode de chaînage et jetez un coup d'
 sera. Dans vos fonctions de classe, retournez simplement `this` à la fin de chaque fonction,
 et vous pouvez y chaîner d’autres méthodes de classe.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 class Voiture {
@@ -1247,7 +1247,7 @@ voiture.fixerLaCouleur("rose");
 voiture.enregistrer();
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 class Voiture {
@@ -1307,7 +1307,7 @@ est plus logique que la composition:
 3.  Vous souhaitez apporter des modifications globales aux classes dérivées en modifiant une classe de base.
          (Changer la dépense calorique de tous les animaux quand ils bougent).
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 class Employé {
@@ -1331,7 +1331,7 @@ class DonnéesFiscalesDuEmployé extends Employé {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 class DonnéesFiscalesDuEmployé {
@@ -1371,7 +1371,7 @@ C'est important car si trop de fonctionnalités sont dans une classe et que vous
 un morceau de celui-ci, il peut être difficile de comprendre comment cela affectera les autres
 modules dépendants dans votre base de code.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 class ParamètresUtilisateur {
@@ -1391,7 +1391,7 @@ class ParamètresUtilisateur {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 class AuthentificationUtilisateur {
@@ -1427,7 +1427,7 @@ etc.) devrait être ouvert pour extension, mais fermé pour modification. "Qu'es
 signifie cependant? Ce principe stipule essentiellement que vous devez permettre aux utilisateurs de
 ajouter de nouvelles fonctionnalités sans changer le code existant.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 class AdaptateurAjax extends Adaptateur {
@@ -1471,7 +1471,7 @@ function faireAppelHttp(url) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 class AdaptateurAjax extends Adaptateur {
@@ -1526,7 +1526,7 @@ exemple classique de Square-Rectangle. Mathématiquement, un carré est un recta
 si vous modélisez en utilisant la relation "est-une" via l'héritage, vous rapidement
 avoir des problèmes.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 class Rectangle {
@@ -1581,7 +1581,7 @@ const rectangles = [new Rectangle(), new Rectangle(), new Carré()];
 rendreLesGrandsRectangles(rectangles);
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 class Forme {
@@ -1646,7 +1646,7 @@ d'énormes quantités d'options est bénéfique, car la plupart du temps, ils n'
 tous les paramètres. Les rendre facultatifs aide à éviter d'avoir un
 "interface grasse".
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 class DOMTraverser {
@@ -1672,7 +1672,7 @@ const $ = new DOMTraverser({
 });
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 class DOMTraverser {
@@ -1731,7 +1731,7 @@ et les propriétés qu'un objet / classe expose à un autre objet / classe. dans
 exemple ci-dessous, le contrat implicite est que tout module de demande pour un
 `InventoryTracker` aura une méthode`requestItems`.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 class DemandeurInventaire {
@@ -1764,7 +1764,7 @@ const traqueurInventaire = new SuiviInventaire(["pommes", "bananes"]);
 traqueurInventaire.demanderDesArticles();
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 class SuiviInventaire {
@@ -1830,7 +1830,7 @@ ou refactoriser un existant.
 
 ### Concept unique par test
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 import assert from "assert";
@@ -1854,7 +1854,7 @@ describe("Rendre MomentJS encore une fois génial", () => {
 });
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 import assert from "assert";
@@ -1889,7 +1889,7 @@ describe("Rendre MomentJS encore une fois génial", () => {
 Les rappels ne sont pas propres et provoquent des quantités excessives d'imbrication. Avec ES2015 / ES6,
 Les promesses sont un type global intégré. Utilise les!
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 import { get } from "request";
@@ -1913,7 +1913,7 @@ get(
 );
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 import { get } from "request";
@@ -1941,7 +1941,7 @@ dans un mot clé `async`, et vous pourrez alors écrire votre logique impérativ
 une chaîne de fonctions "alors". Utilisez-le si vous pouvez tirer parti des fonctionnalités de ES2017 / ES8
 aujourd'hui!
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 import { get } from "request-promise";
@@ -1959,7 +1959,7 @@ get("https://en.wikipedia.org/wiki/Robert_Cecil_Martin")
   });
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 import { get } from "request-promise";
@@ -1996,7 +1996,7 @@ n'est pas beaucoup mieux que souvent, il peut se perdre dans une mer de choses i
 pense qu'une erreur peut se produire là-bas et que vous devriez donc avoir un plan,
 ou créer un chemin de code, pour quand il se produit.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 try {
@@ -2006,7 +2006,7 @@ try {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 try {
@@ -2027,7 +2027,7 @@ try {
 Pour la même raison, vous ne devez pas ignorer les erreurs interceptées
 de `try / catch`.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 getdata()
@@ -2076,7 +2076,7 @@ JavaScript n'est pas typé, la capitalisation en dit beaucoup sur vos variables,
 fonctions, etc. Ces règles sont subjectives, votre équipe peut donc choisir ce que
 Ils veulent. Le fait est que, peu importe ce que vous choisissez tous, soyez juste cohérent.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 const JOURS_PAR_SEMAINE = 7;
@@ -2092,7 +2092,7 @@ class animale {}
 class Alpaga {}
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 const JOURS_PAR_SEMAINE = 7;
@@ -2116,7 +2116,7 @@ Si une fonction en appelle une autre, gardez ces fonctions verticalement proches
 fichier. Idéalement, laissez l'appelant juste au-dessus de l'appelé. Nous avons tendance à lire le code de
 de haut en bas, comme un journal. Pour cette raison, faites votre code lu de cette façon.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 class ExamenDuRendement {
@@ -2156,7 +2156,7 @@ const evaluation = new ExamenDuRendement(employé);
 evaluation.examenDuRendement();
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 class ExamenDuRendement {
@@ -2204,7 +2204,7 @@ evaluation.examenDuRendement();
 
 Les commentaires sont des excuses, pas une exigence. Bon code _mostly_ se documente.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 function hasher(données) {
@@ -2226,7 +2226,7 @@ function hasher(données) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function hasher(données) {
@@ -2249,7 +2249,7 @@ function hasher(données) {
 
 Le contrôle de version existe pour une raison. Laissez l'ancien code dans votre historique.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 faireUneChose();
@@ -2258,7 +2258,7 @@ faireUneChose();
 // faireTropDeChoses();
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 faireUneChose();
@@ -2271,7 +2271,7 @@ faireUneChose();
 Rappelez-vous, utilisez le contrôle de version! Il n'y a pas besoin de code mort, de code commenté,
 et surtout les commentaires de journaux. Utilisez `git log` pour obtenir l'historique!
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 /**
@@ -2285,7 +2285,7 @@ function combiner(a, b) {
 }
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 function combiner(a, b) {
@@ -2300,7 +2300,7 @@ function combiner(a, b) {
 Ils ne font généralement qu'ajouter du bruit. Laissez les fonctions et les noms de variables avec le
 L’indentation et le formatage appropriés donnent la structure visuelle à votre code.
 
-**Mal:**
+**Mauvaise Pratique:**
 
 ```javascript
 ////////////////////////////////////////////////////////////////////////////////
@@ -2319,7 +2319,7 @@ const actions = function() {
 };
 ```
 
-**Bien:**
+**Bonne Pratique:**
 
 ```javascript
 $scope.model = {
