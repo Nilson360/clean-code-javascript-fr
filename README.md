@@ -431,7 +431,7 @@ pire que le code en double, alors soyez prudent! Cela dit, si vous pouvez faire
 une bonne abstraction, faites-le! Ne te répète pas, sinon tu te retrouveras
 mettre à jour plusieurs endroits chaque fois que vous voulez changer une chose.
 
-**Mal:**
+**Mauvaise pratique:**
 
 ```javascript
 function afficherLaListeDesDéveloppeurs(développeurs) {
@@ -496,7 +496,7 @@ function afficherLaListeDesEmployés(employés) {
 
 ### Définir des objets par défaut avec Object.assign
 
-**Mal:**
+**Mauvaise pratique:**
 
 ```javascript
 const configMenu = {
@@ -550,7 +550,7 @@ créerUnMenu(configMenu);
 
 Les drapeaux indiquent à l'utilisateur que cette fonction fait plus d'une chose. Les fonctions devraient faire une chose. Répartissez vos fonctions si elles suivent différents chemins de code basés sur un booléen.
 
-**Mal:**
+**Mauvaise pratique:**
 
 ```javascript
 function créerUnFichier(nom, temp) {
