@@ -78,14 +78,14 @@ Rendez vos noms consultables. Des outils comme
 [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
 peuvent aider à identifier des constantes non nommées.
 
-**Mal:**
+**Mauvaise pratique:**
 
 ```javascript
 // Qu'est-ce que c'est que 86400000?
 setTimeout(misÀFeu, 86400000);
 ```
 
-**Bien:**
+**Bonne pratique:**
 
 ```javascript
 // Déclarez-les comme des constantes nommées capitalisées.
@@ -98,7 +98,7 @@ setTimeout(misÀFeu, MILLISECONDES_PAR_JOUR);
 
 ### Utiliser des variables explicatives
 
-**Mal:**
+**Mauvaise pratique:**
 
 ```javascript
 const adresse = "One Infinite Loop, Cupertino 95014";
@@ -124,7 +124,7 @@ enregistrerCodePostalVille(ville, codePostal);
 
 Explicite est meilleur qu'implicite.
 
-**Mal:**
+**Mauvaise pratique:**
 
 ```javascript
 const endroits = ["Austin", "New York", "San Francisco"];
@@ -160,7 +160,7 @@ endroits.forEach(endroit => {
 Si votre nom de classe / d’objet vous dit quelque chose, ne répétez pas cela dans votre
 Nom de variable.
 
-**Mal:**
+**Mauvaise pratique:**
 
 ```javascript
 const Voiture = {
@@ -197,7 +197,7 @@ utilisez-les, votre fonction ne fournira que les valeurs par défaut pour `undef
 arguments. Autres valeurs "fausses" telles que `''`, `" ",` `false`, `null`, `0` et
 `NaN`, ne sera pas remplacé par une valeur par défaut.
 
-**Mal:**
+**Mauvaise pratique:**
 
 ```javascript
 function créerUneMicroBrasserie(nom) {
